@@ -39,7 +39,8 @@ class Product extends Eloquent
         'product_upc',
         'product_cat_id',
         'product_price',
-        'product_description'
+        'product_description',
+        'product_image'
     ];
 
     public function category()

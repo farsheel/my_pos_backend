@@ -30,6 +30,7 @@ Route::group([
 
     Route::get('product', 'Api\ApiProductController@index');
     Route::post('product', 'Api\ApiProductController@create');
+    Route::post('product/upload_image', 'Api\ApiProductController@uploadImage');
 
     Route::get('category', 'Api\ApiCategoryController@index');
     Route::post('category', 'Api\ApiCategoryController@create');
