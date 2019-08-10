@@ -18,6 +18,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::post('deploy', 'Api\DeployController@deploy');
+
 
 Route::post('login', 'Api\ApiAuthController@login');
 Route::post('signup', 'Api\ApiAuthController@signup');
