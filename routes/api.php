@@ -18,6 +18,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::post('deploy', 'Api\DeployController@deploy');
+
 
 Route::post('login', 'Api\ApiAuthController@login');
 Route::post('signup', 'Api\ApiAuthController@signup');
@@ -30,6 +32,7 @@ Route::group([
 
     Route::get('product', 'Api\ApiProductController@index');
     Route::post('product', 'Api\ApiProductController@create');
+    Route::post('product/upload_image', 'Api\ApiProductController@uploadImage');
 
     Route::get('category', 'Api\ApiCategoryController@index');
     Route::post('category', 'Api\ApiCategoryController@create');
