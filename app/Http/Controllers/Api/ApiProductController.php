@@ -20,12 +20,7 @@ class ApiProductController extends Controller
      */
     public function index()
     {
-        return response()->json(Product::paginate(10)->map(function ($item, $key) {
-            if (!(!isset($item->product_image) || trim($item->product_image) === '')) {
-                $item->product_image = \request()->root() . "/storage/uploads/images/" . $item->product_image;
-            }
-            return $item;
-        }));
+        return response()->json(Product::paginate(10));
     }
 
     /**
@@ -65,7 +60,7 @@ class ApiProductController extends Controller
         // Form validation
         $validator = Validator::make($request->all(), [
             'product_id' => 'required|exists:product,product_id',
-            'product_image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048'
+            'product_image' => 'required|mimes:jpeg,png,jpg,gif'
         ]);
 
 
