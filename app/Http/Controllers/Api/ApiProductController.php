@@ -90,7 +90,6 @@ class ApiProductController extends Controller
             $product->product_image = $imageName . "." . $image->getClientOriginalExtension();
             $product->save();
 
-            $product->product_image = $request->root() . "/storage/" . $result;
 
             return response()->json([
                 'status' => true,
