@@ -20,7 +20,7 @@ class ApiProductController extends Controller
      */
     public function index()
     {
-        return response()->json(Product::paginate(10));
+        return response()->json(Product::paginate(1000));
     }
 
     /**
