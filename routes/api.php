@@ -25,7 +25,8 @@ Route::post('login', 'Api\ApiAuthController@login');
 Route::post('signup', 'Api\ApiAuthController@signup');
 
 Route::group([
-    'middleware' => 'auth:api'
+    'middleware' => 'auth:api',
+    'throttle:1000,1'
 ], function () {
     Route::get('logout', 'Api\ApiAuthController@logout');
     Route::get('user', 'Api\ApiAuthController@user');
